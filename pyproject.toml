@@ -1,0 +1,9 @@
+[project]
+name = "github-mcp-server"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.10"
+dependencies = [
+    "fastmcp>=2.8.1",
+    "requests>=2.32.4",
+]
