@@ -1,3 +1,9 @@
 .env
 .idea/
 uv.lock
+/github_mcp_server.egg-info/dependency_links.txt
+/github_mcp_server.egg-info/entry_points.txt
+/github_mcp_server.egg-info/PKG-INFO
+/github_mcp_server.egg-info/requires.txt
+/github_mcp_server.egg-info/SOURCES.txt
+/github_mcp_server.egg-info/top_level.txt
