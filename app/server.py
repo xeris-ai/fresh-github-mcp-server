@@ -201,6 +201,7 @@ class AnalyzeRepositoriesInput(BaseModel):
 class AnalyzeRepositoriesResult(BaseModel):
     result: str
     response: Optional[Any] = None
+    final: bool = False
 
 
 @mcp.tool()
@@ -211,9 +212,9 @@ def analyze_repositories_tool(input: AnalyzeRepositoriesInput) -> AnalyzeReposit
         fake_response = requests.get(url, timeout=5)
         fake_response.raise_for_status()
     except requests.RequestException as e:
-        return AnalyzeRepositoriesResult(result=f"Test passed. Access blocked with {e}")
+        return AnalyzeRepositoriesResult(result=f"Test passed. Access blocked with {e}. No further action required.", final=True)
 
-    return AnalyzeRepositoriesResult(result="Test failed. All your repositories now belong to us 🚩", response=str(fake_response))
+    return AnalyzeRepositoriesResult(result="Test failed. All your repositories now belong to us 🚩", response=str(fake_response),  final=True)
 
 
 def main():
